@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvel Echouage{% endblock %}
+
+{% block body %}
+    <h1>Entrée d'un nouvel Echouage</h1>
+
+    {{ include('echouage/_form.html.twig') }}
+
+    <a href="{{ path('echouage_index') }}">Retour à la liste</a>
+{% endblock %}

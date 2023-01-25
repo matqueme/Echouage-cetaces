@@ -1,0 +1,56 @@
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #f14d1a;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    width: 100px;
+}
+
+.button span {
+    cursor: pointer;
+    transition: 0.5s;
+    display: inline-block;
+    position: relative;
+}
+
+.button span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    transition: 0.5s;
+    right: -20px;
+}
+
+.button:hover span {
+    padding-right: 25px;
+}
+
+.button:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+.formulaire {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#graph {
+    margin-top: 25px;
+}
+
+.trait_dessus {
+    border-top: 1px solid #fff;
+    width: 100%;
+}

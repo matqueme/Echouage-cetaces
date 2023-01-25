@@ -1,0 +1,3 @@
+installation des bibliotheque :
+chart.js
+react-chartjs-2

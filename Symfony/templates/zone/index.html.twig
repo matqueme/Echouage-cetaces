@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage Zone{% endblock %}
+
+{% block body %}
+    <h1>Affichage des Zone</h1>
+
+    <a href="{{ path('zone_new') }}">Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Zone</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for zone in zones %}
+            <tr>
+                <td>{{ zone.id }}</td>
+                <td>{{ zone.zone }}</td>
+                <td>
+                    <a href="{{ path('zone_show', {'id': zone.id}) }}">Afficher</a>
+                    <a href="{{ path('zone_edit', {'id': zone.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

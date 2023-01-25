@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage Echouage{% endblock %}
+
+{% block body %}
+    <h1>Affichage des Echouages</h1>
+
+    <a href="{{ path('echouage_new') }}">Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Date</th>
+                <th>Nombre</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for echouage in echouages %}
+            <tr>
+                <td>{{ echouage.id }}</td>
+                <td>{{ echouage.date }}</td>
+                <td>{{ echouage.nombre }}</td>
+                <td>
+                    <a href="{{ path('echouage_show', {'id': echouage.id}) }}">Afficher</a>
+                    <a href="{{ path('echouage_edit', {'id': echouage.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">Pas de résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

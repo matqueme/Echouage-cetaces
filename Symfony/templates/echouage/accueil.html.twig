@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+    <h1>Accueil</h1>
+    
+  {#      
+    <form action='search'>
+            <div class='zone_select' required>
+                Sélectionner une zone: 
+                <select name='zone'>
+                    <option value='0'>Toutes les zones</option>
+                    {% for zone in zones %}
+                        <option value='{{zone.id}}'>
+                            {{zone.zone}}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class='espece_select' required>
+                Sélectionner une espece: 
+                <select name='espece'>
+                    <option selected disabled>--Choisir une espece--</option>
+                    {% for espece in especes %}
+                        <option value='{{espece.id}}'>
+                            {{espece.espece}}
+                        </option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <input type="submit" value="Rechercher">
+        </form>
+
+ 
+    </div>#}
+
+       {{ form_start(form) }}
+            {{ include('echouage/_forma_accueil.html.twig') }}
+        {{ form_end(form) }}
+
+
+{% endblock %}

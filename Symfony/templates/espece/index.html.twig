@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Affichage Espece{% endblock %}
+
+{% block body %}
+    <h1>Affichage des Espece</h1>
+
+    <a href="{{ path('espece_new') }}">Create new</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Espece</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for espece in especes %}
+            <tr>
+                <td>{{ espece.id }}</td>
+                <td>{{ espece.espece }}</td>
+                <td>
+                    <a href="{{ path('espece_show', {'id': espece.id}) }}">Afficher</a>
+                    <a href="{{ path('espece_edit', {'id': espece.id}) }}">Modifier</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">Pas de résultats</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+{% endblock %}

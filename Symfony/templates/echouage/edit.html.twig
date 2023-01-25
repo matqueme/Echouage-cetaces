@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification Echouage{% endblock %}
+
+{% block body %}
+    <h1>Modification d'un Echouage</h1>
+
+    {{ include('echouage/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+
+    <a href="{{ path('echouage_index') }}">Retour à la liste</a>
+
+    {{ include('echouage/_delete_form.html.twig') }}
+{% endblock %}

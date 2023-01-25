@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nombre d'echouages{% endblock %}
+
+{% block body %}
+    <h3><a href="{{ path('echouage_accueil') }}">Refaire une recherche</a></h3>
+
+    <h1>Nombre d'échouages de {{espece}} par an</h1>
+    
+    {% for zone in zones %}
+
+        <div class='wrapper'>
+            <h2>Dans la zone {{zone.zone}}</h2>
+
+            <div class='dateNombre'>
+                <table class="table_nombre">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Nombre</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for date,nombre in echouages[zone.id] %}
+                            <tr>
+                                <td>{{ date }}</td>
+                                <td>{{ nombre }}</td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="2">Pas de résultats</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+
+            <div class='stats'>
+                <table class="table_stats">
+                    <thead>
+                        <tr>
+                            <th>Minimum</th>
+                            <th>Maximum</th>
+                            <th>Moyenne</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr> 
+                            <td>{{ min(echouages[zone.id]) }}</td>
+                            <td>{{ max(echouages[zone.id]) }}</td>
+                            <td> {# Calcul de la moyenne  #}
+                                {% set sumratings = 0 %}
+                                {% for number in echouages[zone.id] %}
+                                    {% set sumratings = sumratings + number %}
+                                {% endfor %}
+                                {{ (sumratings/echouages[zone.id]|length)|number_format(3) }} {# Affiche la moyenne avec 3 chiffres après la virgule #}
+                            </td>
+                        </td>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        
+
+    
+    {% endfor %}
+
+{% endblock %}
