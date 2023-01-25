@@ -20,6 +20,8 @@ _____________Oooo._____________
 
 Ce projet a pour but de réaliser une interface en front-office et une interface en back-office sur le thème des échouages de cétacés sur les côtes Françaises.
 
+Il a été fait en 2022
+
 --------------BDD--------------
 
 La base de données n'a pas été modifiée. Elle décrit toujours le même modèle que celui qui nous a été fournis
