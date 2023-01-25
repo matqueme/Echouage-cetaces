@@ -1,4 +1,4 @@
-                __  __   _          _     ___                 _         _                 
+  <!--          __  __   _          _     ___                 _         _                 
   ___   ___    |  \/  | (_)  _ _   (_)   | _ \  _ _   ___    (_)  ___  | |_     ___   ___ 
  |___| |___|   | |\/| | | | | ' \  | |   |  _/ | '_| / _ \   | | / -_) |  _|   |___| |___|
                |_|  |_| |_| |_||_| |_|   |_|   |_|   \___/  _/ | \___|  \__|              
@@ -16,6 +16,9 @@ _____________Oooo._____________
     (   )     ) /
      \ (     (_/
       \_)
+-->
+
+Ce projet a pour but de réaliser une interface en front-office et une interface en back-office sur le thème des échouages de cétacés sur les côtes Françaises.
 
 --------------BDD--------------
 
